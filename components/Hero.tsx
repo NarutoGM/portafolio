@@ -113,9 +113,9 @@ const Hero: React.FC = () => {
             <div className="space-y-6 relative mt-4">
                 
                 <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold leading-tight">
-                  Soy Fernando, un <br/>
+                  Soy Fernando <br/>
                   <span className="bg-white text-[#0F0F0F] px-2 inline-block -rotate-1 mx-1">Desarrollador Web</span>
-                  peruano.
+                  
                 </h2>
 
                 <p className="text-gray-300 font-normal text-lg md:text-xl max-w-xl leading-relaxed">

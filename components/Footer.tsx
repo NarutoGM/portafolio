@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
                         <Phone size={28} className="text-[#E11C23]" />
                         <div>
                             <p className="text-xs uppercase tracking-widest font-black">WhatsApp</p>
-                            <p className="font-bold text-xl font-['Poppins']">+51 969 184 844</p>
+                            <p className="font-bold text-lg md:text-xl font-['Poppins']">+51 969 184 844</p>
                         </div>
                     </div>
                     <ArrowUpRight size={28} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
                         <Mail size={28} />
                         <div>
                             <p className="text-xs uppercase tracking-widest font-black opacity-70">Email</p>
-                            <p className="font-bold text-lg font-['Poppins']">{EMAIL}</p>
+                            <p className="font-bold text-base md:text-lg font-['Poppins']">{EMAIL}</p>
                         </div>
                     </div>
                     <ArrowUpRight size={28} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
              Fernando Olivert Pantoja Payajo
             </p>
             <p className="mt-2 md:mt-0 opacity-80">
-             © {new Date().getFullYear()} / Design by Logic
+             © {new Date().getFullYear()} / Design by me
             </p>
         </div>
       </div>
