@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
                         <Mail size={28} />
                         <div>
                             <p className="text-xs uppercase tracking-widest font-black opacity-70">Email</p>
-                            <p className="font-bold text-base md:text-lg font-['Poppins']">{EMAIL}</p>
+                            <p className="font-bold text-sm md:text-base font-['Poppins']">{EMAIL}</p>
                         </div>
                     </div>
                     <ArrowUpRight size={28} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
