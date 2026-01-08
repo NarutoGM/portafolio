@@ -10,7 +10,7 @@ export const EMAIL = "fernandoolivert25@gmail.com";
 export const EXPERIENCE_DATA: Experience[] = [
   {
     company: "Molokaih",
-    role: "Full Stack Developer",
+    role: "Junior Developer",
     period: "01/07/2025 – Actualidad",
     type: "Remote",
     logo: "/img/molokaih.webp", // Placeholder generated logo
@@ -19,7 +19,7 @@ export const EXPERIENCE_DATA: Experience[] = [
   },
   {
     company: "Rangel",
-    role: "Full Stack Developer",
+    role: "Junior Developer",
     period: "10/01/2024 – 10/03/2024",
     type: "Presencial",
     logo: "/img/rangel.jpg", // Placeholder generated logo
