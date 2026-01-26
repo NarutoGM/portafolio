@@ -2,19 +2,30 @@ import { Experience, Project, SocialLink } from './types';
 
 // IMPORTANT: Replace this URL with the actual path to your uploaded image if hosting locally
 // or keep this placeholder if you want to test the layout first.
-export const PROFILE_IMAGE_URL = "/img/yo.jpg"; 
+export const PROFILE_IMAGE_URL = "/img/yop.jpg";
 
 export const WHATSAPP_NUMBER = "51969184844";
 export const EMAIL = "fernandoolivert25@gmail.com";
 
 export const EXPERIENCE_DATA: Experience[] = [
   {
+    company: "Dalambo - Firma Creativa",
+    role: "Full Stack Developer",
+    period: "15/01/2026 – Actualidad",
+    type: "Remote",
+    mode: "freelancer",
+    logo: "/img/dalambo.jpg", // Placeholder generated logo
+    description: "Creación y optimización de plataformas web dinámicas para una organización en México, implementando arquitecturas Full Stack con Next.js.",
+    tech: ["Next.js", "Express", "Easypanel"]
+  },
+  {
     company: "Molokaih",
-    role: "Junior Developer",
+    role: "Full Stack Developer",
     period: "01/07/2025 – Actualidad",
     type: "Remote",
+    mode: "parttime",
     logo: "/img/molokaih.webp", // Placeholder generated logo
-    description: "Desarrollo Full Stack para una empresa canadiense, enfocado en la creación de interfaces web dinámicas con Next.js y la implementación de automatizaciones complejas mediante n8n. Integro soluciones como ManyChat para conectar chatbots con diversas redes sociales, trabajando de manera colaborativa en entornos productivos con despliegues continuos.",
+    description: "Desarrollo Full Stack para una empresa Canadiense, enfocado en la creación de interfaces web dinámicas con Next.js y la implementación de automatizaciones complejas mediante n8n. Integro soluciones como ManyChat para conectar chatbots con diversas redes sociales, trabajando de manera colaborativa en entornos productivos con despliegues continuos.",
     tech: ["Next.js", "n8n", "Express", "Easypanel", "ManyChat"]
   },
   {
@@ -22,6 +33,8 @@ export const EXPERIENCE_DATA: Experience[] = [
     role: "Junior Developer",
     period: "10/01/2024 – 10/03/2024",
     type: "Presencial",
+    mode: "fulltime",
+
     logo: "/img/rangel.jpg", // Placeholder generated logo
     description: "Lideré el desarrollo de aplicaciones web utilizando Next.js y ShadCN UI para interfaces avanzadas. Gestioné el backend con Strapi y optimicé flujos operativos mediante automatizaciones en n8n, asegurando un control de versiones riguroso con Git y despliegues eficientes.",
     tech: ["Next.js", "Strapi", "n8n", "Easypanel", "ShadCN UI"]

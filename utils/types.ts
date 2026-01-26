@@ -13,6 +13,8 @@ export interface Experience {
   company: string;
   role: string;
   period: string;
+  mode: string,
+
   description: string; // Changed to string for paragraph summary
   tech: string[];
   type: 'Remote' | 'Presencial' | 'Hybrid';
