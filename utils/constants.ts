@@ -2,7 +2,7 @@ import { Experience, Project, SocialLink } from './types';
 
 // IMPORTANT: Replace this URL with the actual path to your uploaded image if hosting locally
 // or keep this placeholder if you want to test the layout first.
-export const PROFILE_IMAGE_URL = "/img/yop.jpg";
+export const PROFILE_IMAGE_URL = "/img/yo.jpg";
 
 export const WHATSAPP_NUMBER = "51969184844";
 export const EMAIL = "fernandoolivert25@gmail.com";
