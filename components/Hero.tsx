@@ -18,14 +18,14 @@ const Hero: React.FC = () => {
 
           {/* TIRA 1 (Sin animación) */}
           <div className="flex gap-8 text-7xl md:text-9xl font-['Anton'] uppercase text-gray-500 whitespace-nowrap min-w-full shrink-0 px-4">
-            <span>Código Limpio</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
-            <span>Código Limpio</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
+            <span>Colaboración</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
+            <span>Colaboración</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
           </div>
 
           {/* TIRA 2 (Opcional: se mantiene para llenar pantallas anchas, pero estático) */}
           <div aria-hidden="true" className="flex gap-8 text-7xl md:text-9xl font-['Anton'] uppercase text-gray-500 whitespace-nowrap min-w-full shrink-0 px-4">
-            <span>Código Limpio</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
-            <span>Código Limpio</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
+            <span>Colaboración</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
+            <span>Colaboración</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
           </div>
 
         </div>
@@ -171,6 +171,8 @@ const Hero: React.FC = () => {
 
         </div>
       </div>
+
+
     </section>
   );
 };

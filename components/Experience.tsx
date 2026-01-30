@@ -75,7 +75,7 @@ const Experience: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-gray-300 font-['Poppins'] font-light text-lg leading-relaxed mb-6 border-l-2 border-[#E11C23]/30 pl-4 group-hover:border-[#E11C23] transition-colors">
+                  <p className="text-gray-300 font-['Poppins'] font-light text-base md:text-lg leading-relaxed mb-6 border-l-2 border-[#E11C23]/30 pl-4 group-hover:border-[#E11C23] transition-colors">
                     {job.description}
                   </p>
 

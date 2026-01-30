@@ -1,5 +1,14 @@
 import React from 'react';
-import { GraduationCap, Languages, Terminal, Palette, Heart } from 'lucide-react';
+import { GraduationCap, Languages, Terminal, Palette, Heart, Wrench, Workflow, Server, Send } from 'lucide-react';
+import {
+    IconBrandNextjs,
+    IconBrandReact,
+    IconBrandVue,
+    IconBrandAngular,
+    IconBrandDocker,
+    IconBrandGithub,
+    IconBrandGit
+} from '@tabler/icons-react';
 
 const Education: React.FC = () => {
     return (
@@ -10,6 +19,15 @@ const Education: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#E11C23]/10 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
 
             <div className="container mx-auto px-6 relative z-10">
+                <div className="mb-16">
+                    <span className="bg-[#0F0F0F] text-white px-4 py-1 text-sm font-bold uppercase tracking-widest inline-block mb-4 -rotate-1">
+                        Educación
+                    </span>
+                    <h2 className="text-6xl font-['Anton'] text-[#0F0F0F] mb-6 uppercase">
+                        Datos <span className="text-[#E11C23]">Relevantes</span>
+                    </h2>
+                </div>
+
 
                 <div className="grid lg:grid-cols-2 gap-16 md:gap-24">
 
@@ -43,7 +61,7 @@ const Education: React.FC = () => {
                                 <Languages className="inline-block mr-2 -mt-1" size={24} />
                                 Idiomas
                             </h3>
-                            <div className="bg-[#F2F2F2] p-6 border-2 border-[#0F0F0F] shadow-[4px_4px_0px_0px_#0F0F0F]">
+                            <div className="bg-white p-6 border-2 border-[#0F0F0F] shadow-[4px_4px_0px_0px_#0F0F0F]">
                                 <div className="flex justify-between items-center mb-4 border-b border-[#0F0F0F]/10 pb-2">
                                     <span className="font-bold text-lg uppercase">Español</span>
                                     <span className="font-['Gochi_Hand'] text-[#E11C23] font-bold text-xl">Nativo</span>
@@ -54,7 +72,16 @@ const Education: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-
+                        {/* Tools Section */}
+                        <div>
+                            <h3 className="inline-block bg-[#0F0F0F] text-white font-['Anton'] text-3xl px-4 py-2 uppercase tracking-wide mb-8 rotate-1 shadow-[6px_6px_0px_0px_#E11C23]">
+                                <Wrench className="inline-block mr-2 -mt-1" size={24} />
+                                Herramientas
+                            </h3>
+                            <div className="bg-white border-2 border-[#0F0F0F] p-6 shadow-[6px_6px_0px_0px_#0F0F0F]">
+                                <p className="font-bold text-lg uppercase tracking-wider">Antigravity</p>
+                            </div>
+                        </div>
                     </div>
 
                     {/* --- RIGHT COLUMN: Software & Skills --- */}
@@ -64,21 +91,23 @@ const Education: React.FC = () => {
                         <div>
                             <h3 className="inline-block bg-[#0F0F0F] text-white font-['Anton'] text-3xl px-4 py-2 uppercase tracking-wide mb-8 -rotate-2 shadow-[6px_6px_0px_0px_#E11C23]">
                                 <Terminal className="inline-block mr-2 -mt-1" size={24} />
-                                Software
+                                Tecnologías
                             </h3>
 
                             <div className="bg-white border-2 border-[#0F0F0F] p-8 shadow-[6px_6px_0px_0px_#0F0F0F] space-y-5">
-                                <SkillRow name="Next.js" level={5} />
-                                <SkillRow name="React" level={5} />
-                                <SkillRow name="Vue.js" level={3} />
-                                <SkillRow name="Angular" level={3} />
-                                <SkillRow name="n8n" level={5} />
-                                <SkillRow name="Easypanel" level={5} />
-                                <SkillRow name="Docker" level={4} />
-                                <SkillRow name="Postman" level={5} />
-                                <SkillRow name="Git / GitHub" level={5} />
+                                <SkillRow name="Next.js" level={5} icon={<IconBrandNextjs size={24} />} />
+                                <SkillRow name="React" level={5} icon={<IconBrandReact size={24} />} />
+                                <SkillRow name="Vue.js" level={3} icon={<IconBrandVue size={24} />} />
+                                <SkillRow name="Angular" level={3} icon={<IconBrandAngular size={24} />} />
+                                <SkillRow name="n8n" level={5} icon={<Workflow size={24} />} />
+                                <SkillRow name="Easypanel" level={5} icon={<Server size={24} />} />
+                                <SkillRow name="Docker" level={4} icon={<IconBrandDocker size={24} />} />
+                                <SkillRow name="Postman" level={5} icon={<Send size={24} />} />
+                                <SkillRow name="Git / GitHub" level={5} icon={<IconBrandGithub size={24} />} />
                             </div>
                         </div>
+
+
 
                         {/* Soft Skills Section */}
                         <div>
@@ -109,10 +138,11 @@ const Education: React.FC = () => {
 };
 
 // Helper component for the dots
-const SkillRow = ({ name, level }: { name: string; level: number }) => {
+const SkillRow = ({ name, level, icon }: { name: string; level: number; icon?: React.ReactNode }) => {
     return (
         <div className="flex items-center justify-between">
-            <span className="font-bold text-[#0F0F0F] uppercase tracking-wider text-sm md:text-base">
+            <span className="font-bold text-[#0F0F0F] uppercase tracking-wider text-sm md:text-base flex items-center gap-2">
+                {icon}
                 {name}
             </span>
             <div className="flex gap-2">
