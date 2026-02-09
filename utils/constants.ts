@@ -10,17 +10,17 @@ export const EMAIL = "fernandoolivert25@gmail.com";
 export const EXPERIENCE_DATA: Experience[] = [
   {
     company: "Dalambo - Firma Creativa",
-    role: "Full Stack Developer",
+    role: "Developer web",
     period: "15/01/2026 – Actualidad",
     type: "Remote",
     mode: "freelancer",
     logo: "/img/dalambo.jpg", // Placeholder generated logo
     description: "Creación y optimización de plataformas web dinámicas para una organización en México, implementando arquitecturas Full Stack con Next.js.",
-    tech: ["Next.js", "Express", "Easypanel"]
+    tech: ["Next.js", "Nest.js", "Easypanel"]
   },
   {
     company: "Molokaih",
-    role: "Full Stack Developer",
+    role: "Developer web",
     period: "01/07/2025 – Actualidad",
     type: "Remote",
     mode: "parttime",
