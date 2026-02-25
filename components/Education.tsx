@@ -7,8 +7,10 @@ import {
     IconBrandAngular,
     IconBrandDocker,
     IconBrandGithub,
-    IconBrandGit
+
 } from '@tabler/icons-react';
+import { SiNestjs } from "react-icons/si"
+
 
 const Education: React.FC = () => {
     return (
@@ -104,6 +106,7 @@ const Education: React.FC = () => {
                                 <SkillRow name="Docker" level={4} icon={<IconBrandDocker size={24} />} />
                                 <SkillRow name="Postman" level={5} icon={<Send size={24} />} />
                                 <SkillRow name="Git / GitHub" level={5} icon={<IconBrandGithub size={24} />} />
+                                <SkillRow name="NestJS" level={4} icon={<SiNestjs size={24} />} />
                             </div>
                         </div>
 

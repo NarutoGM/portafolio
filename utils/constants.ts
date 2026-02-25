@@ -26,7 +26,7 @@ export const EXPERIENCE_DATA: Experience[] = [
     mode: "parttime",
     logo: "/img/molokaih.webp", // Placeholder generated logo
     description: "Desarrollo Full Stack para una empresa Canadiense, enfocado en la creación de interfaces web dinámicas con Next.js y la implementación de automatizaciones complejas mediante n8n. Integro soluciones como ManyChat para conectar chatbots con diversas redes sociales, trabajando de manera colaborativa en entornos productivos con despliegues continuos.",
-    tech: ["Next.js", "n8n", "Express", "Easypanel", "ManyChat"]
+    tech: ["Next.js", "Nest.js", "n8n", "Easypanel", "ManyChat"]
   },
   {
     company: "Rangel",
@@ -37,7 +37,7 @@ export const EXPERIENCE_DATA: Experience[] = [
 
     logo: "/img/rangel.jpg", // Placeholder generated logo
     description: "Lideré el desarrollo de aplicaciones web utilizando Next.js y ShadCN UI para interfaces avanzadas. Gestioné el backend con Strapi y optimicé flujos operativos mediante automatizaciones en n8n, asegurando un control de versiones riguroso con Git y despliegues eficientes.",
-    tech: ["Next.js", "Strapi", "n8n", "Easypanel", "ShadCN UI"]
+    tech: ["Next.js", "Strapi", "n8n", "Easypanel"]
   }
 ];
 
@@ -46,7 +46,7 @@ export const PROJECTS_DATA: Project[] = [
     id: "painting-landing",
     title: "Servicios de Pintura",
     description: "Landing page comercial moderna para servicios de pintura. Incluye un panel administrativo completo para gestionar contenido.",
-    tech: ["React", "Tailwind", "Vercel", "Admin Panel"],
+    tech: ["Next.js", "Postgresql"],
     link: "https://landing-base-rosy.vercel.app/",
     image: "/img/projects/image.png",
     isFreelance: true,
