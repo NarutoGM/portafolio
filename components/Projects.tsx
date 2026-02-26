@@ -125,59 +125,61 @@ const Projects: React.FC = () => {
 
         {/* Photo Deck Modal */}
         {selectedProject && selectedProject.images && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#0F0F0F]/90 backdrop-blur-sm">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#0F0F0F]/95 backdrop-blur-md">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-6 right-6 text-white hover:text-[#E11C23] transition-colors z-[110]"
+              className="absolute top-4 right-4 md:top-8 md:right-8 text-white hover:text-[#E11C23] transition-all hover:rotate-90 z-[110]"
             >
-              <X size={40} />
+              <X size={32} className="md:w-12 md:h-12" />
             </button>
 
             <div className="relative w-full max-w-4xl flex flex-col items-center">
               {/* Baraja / Stack Aesthetic */}
-              <div className="relative w-full aspect-[16/9] mb-12">
-                {/* Decorative Stacked Cards */}
-                <div className="absolute inset-0 bg-white border-4 border-[#0F0F0F] translate-x-4 translate-y-4 shadow-[12px_12px_0px_0px_#E11C23]"></div>
-                <div className="absolute inset-0 bg-[#F2F2F2] border-4 border-[#0F0F0F] translate-x-2 translate-y-2"></div>
+              <div className="relative w-full aspect-square md:aspect-video mb-8 md:mb-12 group">
+                {/* Decorative Stacked Cards - Subtler on mobile */}
+                <div className="absolute inset-0 bg-white border-2 md:border-4 border-[#0F0F0F] translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 shadow-[6px_6px_0px_0px_#E11C23] md:shadow-[12px_12px_0px_0px_#E11C23]"></div>
+                <div className="absolute inset-0 bg-[#F2F2F2] border-2 md:border-4 border-[#0F0F0F] translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2"></div>
 
                 {/* Current Image Card */}
-                <div className="absolute inset-0 bg-white border-4 border-[#0F0F0F] overflow-hidden flex items-center justify-center group">
+                <div className="absolute inset-0 bg-white border-2 md:border-4 border-[#0F0F0F] overflow-hidden flex items-center justify-center">
                   <img
                     src={selectedProject.images[currentImageIndex]}
                     alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                    className="w-full h-full object-contain p-4"
+                    className="w-full h-full object-contain p-2 md:p-4 select-none"
                   />
 
                   {/* Navigation Arrows inside the card */}
                   <button
                     onClick={(e) => { e.stopPropagation(); prevImage(); }}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white border-4 border-[#0F0F0F] p-2 hover:bg-[#E11C23] hover:text-white transition-all shadow-[4px_4px_0px_0px_#0F0F0F] active:translate-x-1 active:translate-y-1 active:shadow-none"
+                    className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white border-2 md:border-4 border-[#0F0F0F] p-2 md:p-3 hover:bg-[#E11C23] hover:text-white transition-all shadow-[2px_2px_0px_0px_#0F0F0F] md:shadow-[4px_4px_0px_0px_#0F0F0F] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none z-30"
+                    aria-label="Anterior"
                   >
-                    <ChevronLeft size={24} />
+                    <ChevronLeft size={20} className="md:w-8 md:h-8" />
                   </button>
                   <button
                     onClick={(e) => { e.stopPropagation(); nextImage(); }}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white border-4 border-[#0F0F0F] p-2 hover:bg-[#E11C23] hover:text-white transition-all shadow-[4px_4px_0px_0px_#0F0F0F] active:translate-x-1 active:translate-y-1 active:shadow-none"
+                    className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white border-2 md:border-4 border-[#0F0F0F] p-2 md:p-3 hover:bg-[#E11C23] hover:text-white transition-all shadow-[2px_2px_0px_0px_#0F0F0F] md:shadow-[4px_4px_0px_0px_#0F0F0F] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none z-30"
+                    aria-label="Siguiente"
                   >
-                    <ChevronRight size={24} />
+                    <ChevronRight size={20} className="md:w-8 md:h-8" />
                   </button>
                 </div>
               </div>
 
               {/* Info & Counter */}
-              <div className="bg-white border-4 border-[#0F0F0F] p-6 shadow-[8px_8px_0px_0px_#E11C23] flex flex-col md:flex-row items-center justify-between gap-6 w-full max-w-2xl">
-                <div>
-                  <h4 className="text-2xl font-black uppercase mb-1 font-['Anton'] tracking-tight">
+              <div className="bg-white border-2 md:border-4 border-[#0F0F0F] p-4 md:p-6 shadow-[4px_4px_0px_0px_#E11C23] md:shadow-[8px_8px_0px_0px_#E11C23] flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 w-full max-w-2xl">
+                <div className="text-center md:text-left">
+                  <h4 className="text-xl md:text-2xl font-black uppercase mb-0.5 md:mb-1 font-['Anton'] tracking-tight">
                     {selectedProject.title}
                   </h4>
-                  <p className="text-xs font-bold uppercase text-[#0F0F0F]/50 tracking-widest">
+                  <p className="text-[10px] md:text-xs font-bold uppercase text-[#0F0F0F]/50 tracking-widest">
                     Galería de Fotos
                   </p>
                 </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-3xl font-black font-['Anton'] text-[#E11C23]">
+                <div className="flex items-center gap-3 md:gap-4">
+                  <span className="text-2xl md:text-3xl font-black font-['Anton'] text-[#E11C23]">
                     {String(currentImageIndex + 1).padStart(2, '0')}
-                    <span className="text-[#0F0F0F]/30 text-xl ml-1">/ {String(selectedProject.images.length).padStart(2, '0')}</span>
+                    <span className="text-[#0F0F0F]/30 text-lg md:text-xl ml-1">/ {String(selectedProject.images.length).padStart(2, '0')}</span>
                   </span>
                 </div>
               </div>
