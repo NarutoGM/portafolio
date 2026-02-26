@@ -150,7 +150,10 @@ const Projects: React.FC = () => {
 
         {/* Photo Deck Modal */}
         {selectedProject && selectedProject.images && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#0F0F0F]/95 backdrop-blur-md">
+          <div
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#0F0F0F]/95 backdrop-blur-md cursor-pointer"
+            onClick={() => setSelectedProject(null)}
+          >
             <button
               onClick={() => setSelectedProject(null)}
               className="absolute top-4 right-4 md:top-8 md:right-8 text-white hover:text-[#E11C23] transition-all hover:rotate-90 z-[110]"
@@ -158,7 +161,10 @@ const Projects: React.FC = () => {
               <X size={32} className="md:w-12 md:h-12" />
             </button>
 
-            <div className="relative w-full max-w-4xl flex flex-col items-center">
+            <div
+              className="relative w-full max-w-4xl flex flex-col items-center cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Baraja / Stack Aesthetic */}
               <div className="relative w-full aspect-square md:aspect-video mb-8 md:mb-12 group">
                 {/* Decorative Stacked Cards - Subtler on mobile */}
