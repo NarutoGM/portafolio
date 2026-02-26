@@ -5,6 +5,7 @@ export interface Project {
   tech: string[];
   link?: string;
   image: string;
+  images?: string[];
   isFreelance?: boolean;
   hasLogin?: boolean;
 }

@@ -43,15 +43,39 @@ export const EXPERIENCE_DATA: Experience[] = [
 
 export const PROJECTS_DATA: Project[] = [
   {
+    id: "veracruz-hotel",
+    title: "Proyecto Veracruz",
+    description: "Sistema de reservas integral para hotel, diseñado para optimizar la gestión de huéspedes y disponibilidad en tiempo real.",
+    tech: ["Next.js", "Nest.js", "Postgresql", "Easypanel"],
+    link: "https://proyecto-veracruz.vercel.app/",
+    image: "/img/projects/pelicanos/1.png",
+    images: [
+      "/img/projects/pelicanos/1.png",
+      "/img/projects/pelicanos/2.png",
+      "/img/projects/pelicanos/3.png",
+      "/img/projects/pelicanos/4.png",
+      "/img/projects/pelicanos/5.png"
+
+    ],
+    isFreelance: true,
+    hasLogin: true
+  },
+  {
     id: "painting-landing",
     title: "Servicios de Pintura",
     description: "Landing page comercial moderna para servicios de pintura. Incluye un panel administrativo completo para gestionar contenido.",
     tech: ["Next.js", "Postgresql"],
     link: "https://landing-base-rosy.vercel.app/",
     image: "/img/projects/image.png",
+    images: [
+      "/img/projects/image.png",
+
+
+    ],
     isFreelance: true,
     hasLogin: true
-  }
+  },
+
 ];
 
 // Mapped for SimpleIcons CDN
