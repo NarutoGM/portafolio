@@ -8,6 +8,7 @@ import { PROJECTS_DATA } from '@/utils/constants';
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS_DATA[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   // Close modal on escape key
   useEffect(() => {
@@ -18,13 +19,37 @@ const Projects: React.FC = () => {
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
+  // Preload images
+  useEffect(() => {
+    if (!selectedProject?.images) return;
+
+    const preloadImage = (index: number) => {
+      const img = new Image();
+      img.src = selectedProject.images![index];
+    };
+
+    // Preload next and previous
+    const nextIdx = (currentImageIndex + 1) % selectedProject.images.length;
+    const prevIdx = (currentImageIndex - 1 + selectedProject.images.length) % selectedProject.images.length;
+
+    preloadImage(nextIdx);
+    preloadImage(prevIdx);
+
+    // Also preload all others if it's a small gallery (like the 5 images we have)
+    selectedProject.images.forEach((_, idx) => {
+      if (idx !== currentImageIndex) preloadImage(idx);
+    });
+  }, [selectedProject, currentImageIndex]);
+
   const nextImage = () => {
     if (!selectedProject?.images) return;
+    setIsImageLoading(true);
     setCurrentImageIndex((prev) => (prev + 1) % selectedProject.images!.length);
   };
 
   const prevImage = () => {
     if (!selectedProject?.images) return;
+    setIsImageLoading(true);
     setCurrentImageIndex((prev) => (prev - 1 + selectedProject.images!.length) % selectedProject.images!.length);
   };
 
@@ -45,7 +70,7 @@ const Projects: React.FC = () => {
             <div key={project.id} className="group bg-[#F2F2F2] border-4 border-[#0F0F0F] flex flex-col relative hover:-translate-y-2 transition-transform duration-300 shadow-[8px_8px_0px_0px_#0F0F0F]">
 
               {/* Image Area */}
-              <div className="relative h-64 overflow-hidden border-b-4 border-[#0F0F0F] cursor-pointer" onClick={() => project.images && (setSelectedProject(project), setCurrentImageIndex(0))}>
+              <div className="relative h-64 overflow-hidden border-b-4 border-[#0F0F0F] cursor-pointer" onClick={() => project.images && (setSelectedProject(project), setCurrentImageIndex(0), setIsImageLoading(true))}>
                 <div className="absolute inset-0  group-hover:bg-transparent transition-colors z-10 mix-blend-multiply"></div>
                 <img
                   src={project.image}
@@ -109,7 +134,7 @@ const Projects: React.FC = () => {
 
                     {project.images && project.images.length > 0 && (
                       <button
-                        onClick={() => { setSelectedProject(project); setCurrentImageIndex(0); }}
+                        onClick={() => { setSelectedProject(project); setCurrentImageIndex(0); setIsImageLoading(true); }}
                         className="w-full flex cursor-pointer  items-center justify-center gap-2 py-3 bg-white text-[#0F0F0F] font-black hover:bg-[#F2F2F2] transition-colors text-sm uppercase border-2 border-[#0F0F0F] shadow-[4px_4px_0px_0px_#0F0F0F] active:translate-x-1 active:translate-y-1 active:shadow-none"
                       >
                         Ver Fotos
@@ -142,10 +167,18 @@ const Projects: React.FC = () => {
 
                 {/* Current Image Card */}
                 <div className="absolute inset-0 bg-white border-2 md:border-4 border-[#0F0F0F] overflow-hidden flex items-center justify-center">
+                  {isImageLoading && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#F2F2F2] z-40">
+                      <div className="w-12 h-12 md:w-16 md:h-16 border-4 border-[#E11C23] border-t-transparent rounded-full animate-spin mb-4 shadow-[4px_4px_0px_0px_#0F0F0F]"></div>
+                      <span className="font-['Anton'] uppercase text-sm md:text-xl tracking-widest animate-pulse">Cargando...</span>
+                    </div>
+                  )}
+
                   <img
                     src={selectedProject.images[currentImageIndex]}
                     alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                    className="w-full h-full object-contain p-2 md:p-4 select-none"
+                    className={`w-full h-full object-contain p-2 md:p-4 select-none transition-opacity duration-300 ${isImageLoading ? 'opacity-0' : 'opacity-100'}`}
+                    onLoad={() => setIsImageLoading(false)}
                   />
 
                   {/* Navigation Arrows inside the card */}
