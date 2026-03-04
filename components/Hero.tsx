@@ -5,7 +5,7 @@ import { PROFILE_IMAGE_URL, WHATSAPP_NUMBER } from '@/utils/constants';
 
 const Hero: React.FC = () => {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-28 pb-12 overflow-hidden bg-[#0F0F0F]">
+    <section id="inicio" className="relative min-h-[80vh] flex items-center justify-center pt-28 pb-12 overflow-hidden bg-[#0F0F0F]">
 
 
 
@@ -31,25 +31,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* ==================== SEGUNDO CARRUSEL (Derecha) ==================== */}
-      {/* Enfocado en tu STACK (Estático y B&N) */}
-      <div className="absolute bottom-24 left-0 right-0 transform rotate-1 z-0 opacity-10 pointer-events-none">
-        <div className="flex overflow-hidden w-full">
 
-          {/* TIRA 1 (Sin animación, texto negro) */}
-          <div className="flex gap-8 text-7xl md:text-9xl font-['Anton'] uppercase text-black whitespace-nowrap min-w-full shrink-0 px-4">
-            <span>Next.js</span> • <span>Express</span> • <span>Strapi</span> • <span>n8n</span> • <span>Postman</span> •
-            <span>Next.js</span> • <span>Express</span> • <span>Strapi</span> • <span>n8n</span> • <span>Postman</span> •
-          </div>
-
-          {/* TIRA 2 (Copia estática) */}
-          <div aria-hidden="true" className="flex gap-8 text-7xl md:text-9xl font-['Anton'] uppercase text-black whitespace-nowrap min-w-full shrink-0 px-4">
-            <span>Next.js</span> • <span>Express</span> • <span>Strapi</span> • <span>n8n</span> • <span>Postman</span> •
-            <span>Next.js</span> • <span>Express</span> • <span>Strapi</span> • <span>n8n</span> • <span>Postman</span> •
-          </div>
-
-        </div>
-      </div>
 
 
 
@@ -81,7 +63,7 @@ const Hero: React.FC = () => {
                   <img
                     src={PROFILE_IMAGE_URL}
                     alt="Fernando Pantoja"
-                    className="w-full h-full object-cover  mix-blend-multiply grayscale-100 contrast-125 brightness-110"
+                    className="w-full h-full object-cover  mix-blend-multiply  contrast-125 brightness-110"
                   />
                   {/* Texture Overlay */}
                   <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
