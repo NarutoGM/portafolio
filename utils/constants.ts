@@ -2,7 +2,7 @@ import { Experience, Project, SocialLink } from './types';
 
 // IMPORTANT: Replace this URL with the actual path to your uploaded image if hosting locally
 // or keep this placeholder if you want to test the layout first.
-export const PROFILE_IMAGE_URL = "/img/yop.png";
+export const PROFILE_IMAGE_URL = "/img/yop.webp";
 
 export const WHATSAPP_NUMBER = "51969184844";
 export const EMAIL = "fernandoolivert25@gmail.com";
@@ -14,7 +14,7 @@ export const EXPERIENCE_DATA: Experience[] = [
     period: "15/01/2026 – Actualidad",
     type: "Remote",
     mode: "freelancer",
-    logo: "/img/dalambo.jpg", // Placeholder generated logo
+    logo: "/img/dalambo.webp", // Placeholder generated logo
     description: "Creación y optimización de plataformas web dinámicas para una organización en México, implementando arquitecturas Full Stack con Next.js.",
     tech: ["Next.js", "Nest.js", "VPS"]
   },
@@ -35,7 +35,7 @@ export const EXPERIENCE_DATA: Experience[] = [
     type: "Presencial",
     mode: "fulltime",
 
-    logo: "/img/rangel.jpg", // Placeholder generated logo
+    logo: "/img/rangel.webp", // Placeholder generated logo
     description: "Lideré el desarrollo de aplicaciones web utilizando Next.js y ShadCN UI para interfaces avanzadas. Gestioné el backend con Strapi y optimicé flujos operativos mediante automatizaciones en n8n, asegurando un control de versiones riguroso con Git y despliegues eficientes.",
     tech: ["Next.js", "Strapi", "n8n", "VPS"]
   }
@@ -47,17 +47,17 @@ export const PROJECTS_DATA: Project[] = [
     title: "App Móvil de Reservas Hoteleras",
     description: "Maqueta y prototipo de aplicación móvil para reservas de habitaciones, catálogo con calificaciones y reseñas, autenticación, validación de pagos, y tablero de reservas activas.",
     tech: ["React Native", "Android Studio", "TypeScript", "Tailwind"],
-    image: "/img/projects/hotel-app/2.png",
+    image: "/img/projects/hotel-app/2.webp",
     images: [
-      "/img/projects/hotel-app/1.png",
-      "/img/projects/hotel-app/2.png",
-      "/img/projects/hotel-app/3.png",
-      "/img/projects/hotel-app/4.png",
-      "/img/projects/hotel-app/5.png",
-      "/img/projects/hotel-app/6.png",
-      "/img/projects/hotel-app/7.png",
-      "/img/projects/hotel-app/8.png",
-      "/img/projects/hotel-app/9.png"
+      "/img/projects/hotel-app/1.webp",
+      "/img/projects/hotel-app/2.webp",
+      "/img/projects/hotel-app/3.webp",
+      "/img/projects/hotel-app/4.webp",
+      "/img/projects/hotel-app/5.webp",
+      "/img/projects/hotel-app/6.webp",
+      "/img/projects/hotel-app/7.webp",
+      "/img/projects/hotel-app/8.webp",
+      "/img/projects/hotel-app/9.webp"
     ],
     isFreelance: false,
     hasLogin: true,
@@ -69,12 +69,12 @@ export const PROJECTS_DATA: Project[] = [
     title: "Sistema de Ventas & SUNAT",
     description: "Plataforma web de ventas y facturación electrónica con integración a SUNAT para gestión de comprobantes, inventario y control de clientes.",
     tech: ["Next.js", "Nest.js", "PostgreSQL"],
-    image: "/img/projects/siga/1.png",
+    image: "/img/projects/siga/1.webp",
     images: [
-      "/img/projects/siga/1.png",
-      "/img/projects/siga/2.png",
-      "/img/projects/siga/3.png",
-      "/img/projects/siga/4.png"
+      "/img/projects/siga/1.webp",
+      "/img/projects/siga/2.webp",
+      "/img/projects/siga/3.webp",
+      "/img/projects/siga/4.webp"
     ],
     isFreelance: true,
     hasLogin: true,
@@ -88,13 +88,13 @@ export const PROJECTS_DATA: Project[] = [
     description: "Sistema de reservas integral para hotel, diseñado para optimizar la gestión de huéspedes y disponibilidad en tiempo real.",
     tech: ["Next.js", "Nest.js", "PostgreSQL", "VPS"],
     link: "https://proyecto-veracruz.vercel.app/",
-    image: "/img/projects/pelicanos/1.png",
+    image: "/img/projects/pelicanos/1.webp",
     images: [
-      "/img/projects/pelicanos/1.png",
-      "/img/projects/pelicanos/2.png",
-      "/img/projects/pelicanos/3.png",
-      "/img/projects/pelicanos/4.png",
-      "/img/projects/pelicanos/5.png"
+      "/img/projects/pelicanos/1.webp",
+      "/img/projects/pelicanos/2.webp",
+      "/img/projects/pelicanos/3.webp",
+      "/img/projects/pelicanos/4.webp",
+      "/img/projects/pelicanos/5.webp"
     ],
     isFreelance: true,
     hasLogin: true,
@@ -106,10 +106,10 @@ export const PROJECTS_DATA: Project[] = [
     description: "Landing page comercial moderna para servicios de pintura. Incluye un panel administrativo completo para gestionar contenido.",
     tech: ["Next.js", "PostgreSQL"],
     link: "https://landing-base-rosy.vercel.app/",
-    image: "/img/projects/pintura/1.png",
+    image: "/img/projects/pintura/1.webp",
     images: [
-      "/img/projects/pintura/1.png",
-      "/img/projects/pintura/2.png"
+      "/img/projects/pintura/1.webp",
+      "/img/projects/pintura/2.webp"
     ],
     isFreelance: true,
     hasLogin: true,

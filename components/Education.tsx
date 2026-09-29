@@ -56,7 +56,7 @@ const Education: React.FC = () => {
                                         </div>
                                         <div className="flex-shrink-0 flex items-center justify-center">
                                             <img
-                                                src="/img/unt.png"
+                                                src="/img/unt.webp"
                                                 alt="Universidad Nacional de Trujillo"
                                                 className="h-16 w-16 object-contain"
                                             />
