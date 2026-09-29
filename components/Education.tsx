@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Languages, Terminal, Palette, Heart, Wrench, Workflow, Server, Send } from 'lucide-react';
+import { GraduationCap, Languages, Terminal, Wrench, Workflow, Server, Send } from 'lucide-react';
 import {
     IconBrandNextjs,
     IconBrandReact,
@@ -7,9 +7,9 @@ import {
     IconBrandAngular,
     IconBrandDocker,
     IconBrandGithub,
-
+    IconBrandAndroid,
 } from '@tabler/icons-react';
-import { SiNestjs } from "react-icons/si"
+import { SiNestjs, SiAndroidstudio } from "react-icons/si"
 
 
 const Education: React.FC = () => {
@@ -47,11 +47,20 @@ const Education: React.FC = () => {
                                 </h3>
 
                                 <div className="space-y-8 pl-4 border-l-4 border-[#E11C23]/20">
-                                    <div className="relative">
-                                        <span className="absolute -left-[25px] top-1 w-4 h-4 bg-[#E11C23] border-2 border-white rounded-full"></span>
-                                        <h4 className="font-['Poppins'] font-bold text-xl">Ingeniería de Sistemas</h4>
-                                        <p className="text-[#0F0F0F]/70 font-medium">Universidad Nacional de Trujillo</p>
-                                        <span className="text-xs font-black bg-[#F2F2F2] px-2 py-0.5 rounded text-[#0F0F0F] mt-1 inline-block">2021 - Presente</span>
+                                    <div className="relative flex items-center justify-between gap-4 bg-[#F8F9FA] p-4 border border-gray-200 rounded-lg">
+                                        <span className="absolute -left-[21px] top-6 w-4 h-4 bg-[#E11C23] border-2 border-white rounded-full"></span>
+                                        <div>
+                                            <h4 className="font-['Poppins'] font-bold text-xl">Ingeniería de Sistemas</h4>
+                                            <p className="text-[#0F0F0F]/80 font-semibold">Universidad Nacional de Trujillo</p>
+                                            <span className="text-xs font-black bg-[#0F0F0F] px-2 py-0.5 rounded text-white mt-2 inline-block">2021 - Presente</span>
+                                        </div>
+                                        <div className="flex-shrink-0 flex items-center justify-center">
+                                            <img
+                                                src="/img/unt.png"
+                                                alt="Universidad Nacional de Trujillo"
+                                                className="h-16 w-16 object-contain"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -80,8 +89,14 @@ const Education: React.FC = () => {
                                 <Wrench className="inline-block mr-2 -mt-1" size={24} />
                                 Herramientas
                             </h3>
-                            <div className="bg-white border-2 border-[#0F0F0F] p-6 shadow-[6px_6px_0px_0px_#0F0F0F]">
-                                <p className="font-bold text-lg uppercase tracking-wider">Antigravity</p>
+                            <div className="bg-white border-2 border-[#0F0F0F] p-6 shadow-[6px_6px_0px_0px_#0F0F0F] space-y-4">
+                                <div className="flex items-center gap-3">
+                                    <SiAndroidstudio size={22} className="text-[#0F0F0F]" />
+                                    <span className="font-bold text-base uppercase tracking-wider">Android Studio</span>
+                                </div>
+                                <div className="flex items-center gap-3 border-t border-gray-100 pt-3">
+                                    <span className="font-bold text-base uppercase tracking-wider">Antigravity</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -99,37 +114,15 @@ const Education: React.FC = () => {
                             <div className="bg-white border-2 border-[#0F0F0F] p-8 shadow-[6px_6px_0px_0px_#0F0F0F] space-y-5">
                                 <SkillRow name="Next.js" level={5} icon={<IconBrandNextjs size={24} />} />
                                 <SkillRow name="React" level={5} icon={<IconBrandReact size={24} />} />
+                                <SkillRow name="React Native" level={4} icon={<IconBrandReact size={24} />} />
                                 <SkillRow name="Vue.js" level={3} icon={<IconBrandVue size={24} />} />
                                 <SkillRow name="Angular" level={3} icon={<IconBrandAngular size={24} />} />
                                 <SkillRow name="n8n" level={5} icon={<Workflow size={24} />} />
-                                <SkillRow name="Easypanel" level={5} icon={<Server size={24} />} />
+                                <SkillRow name="VPS" level={5} icon={<Server size={24} />} />
                                 <SkillRow name="Docker" level={4} icon={<IconBrandDocker size={24} />} />
                                 <SkillRow name="Postman" level={5} icon={<Send size={24} />} />
                                 <SkillRow name="Git / GitHub" level={5} icon={<IconBrandGithub size={24} />} />
                                 <SkillRow name="NestJS" level={4} icon={<SiNestjs size={24} />} />
-                            </div>
-                        </div>
-
-
-
-                        {/* Soft Skills Section */}
-                        <div>
-                            <h3 className="inline-block bg-[#0F0F0F] text-white font-['Anton'] text-3xl px-4 py-2 uppercase tracking-wide mb-6 rotate-1 shadow-[6px_6px_0px_0px_#E11C23]">
-                                <Heart className="inline-block mr-2 -mt-1" size={24} />
-                                Habilidades Blandas
-                            </h3>
-
-                            <div className="relative">
-                                <div className="absolute -top-6 -right-6 text-[#E11C23] opacity-20 rotate-12">
-                                    <Palette size={80} />
-                                </div>
-                                <h4 className="font-['Poppins'] font-black text-2xl uppercase mb-2 flex items-center gap-2">
-                                    <span className="text-[#E11C23]">★</span> Alma Creativa
-                                </h4>
-                                <p className="font-medium text-lg leading-relaxed text-[#0F0F0F]/80">
-                                    Responsable, empático, con gran capacidad para el <span className="bg-[#0F0F0F] text-white px-1">trabajo en equipo</span>.
-                                    Perfil proactivo y analítico enfocado en soluciones.
-                                </p>
                             </div>
                         </div>
 

@@ -8,6 +8,9 @@ export interface Project {
   images?: string[];
   isFreelance?: boolean;
   hasLogin?: boolean;
+  inDevelopment?: boolean;
+  isPrivate?: boolean;
+  date?: string;
 }
 
 export interface Experience {
@@ -20,6 +23,7 @@ export interface Experience {
   tech: string[];
   type: 'Remote' | 'Presencial' | 'Hybrid';
   logo?: string; // Added optional logo property
+  link?: string;
 }
 
 export interface SocialLink {

@@ -1,9 +1,27 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ExternalLink, Images, Lock, Star, X } from 'lucide-react';
+import { Calendar, ChevronLeft, ChevronRight, ExternalLink, Images, Lock, Star, X } from 'lucide-react';
 import { PROJECTS_DATA } from '@/utils/constants';
 
+
+const getRelativeTimeString = (dateStr?: string) => {
+  if (!dateStr) return null;
+  const projectDate = new Date(dateStr);
+  if (isNaN(projectDate.getTime())) return dateStr;
+
+  const now = new Date();
+  let months = (now.getFullYear() - projectDate.getFullYear()) * 12 + (now.getMonth() - projectDate.getMonth());
+  if (now.getDate() < projectDate.getDate()) {
+    months--;
+  }
+
+  if (months <= 0) return "Este mes";
+  if (months === 1) return "Hace 1 mes";
+  if (months < 12) return `Hace ${months} meses`;
+  const years = Math.floor(months / 12);
+  return years === 1 ? "Hace 1 año" : `Hace ${years} años`;
+};
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS_DATA[0] | null>(null);
@@ -70,12 +88,15 @@ const Projects: React.FC = () => {
             <div key={project.id} className="group bg-[#F2F2F2] border-4 border-[#0F0F0F] flex flex-col relative hover:-translate-y-2 transition-transform duration-300 shadow-[8px_8px_0px_0px_#0F0F0F]">
 
               {/* Image Area */}
-              <div className="relative h-64 overflow-hidden border-b-4 border-[#0F0F0F] cursor-pointer" onClick={() => project.images && (setSelectedProject(project), setCurrentImageIndex(0), setIsImageLoading(true))}>
-                <div className="absolute inset-0  group-hover:bg-transparent transition-colors z-10 mix-blend-multiply"></div>
+              <div className="relative h-64 overflow-hidden border-b-4 border-[#0F0F0F] cursor-pointer bg-[#EAEAEA] flex items-center justify-center" onClick={() => project.images && (setSelectedProject(project), setCurrentImageIndex(0), setIsImageLoading(true))}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover md:grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                    project.id === 'hotel-mobile-app' 
+                      ? 'object-contain py-2' 
+                      : 'object-cover'
+                  }`}
                 />
 
                 {project.images && project.images.length > 1 && (
@@ -102,15 +123,15 @@ const Projects: React.FC = () => {
                   {project.description}
                 </p>
 
-                {/* Feature Tags */}
-                {project.hasLogin && (
-                  <div className="mb-5 flex items-center gap-2 text-xs text-[#E11C23] font-bold uppercase tracking-wider">
-                    <Lock size={14} />
-                    <span>Panel Administrativo</span>
+                {/* Feature Tags & Date */}
+                {project.date && (
+                  <div className="mb-5 flex items-center gap-2 text-xs text-gray-500 font-semibold">
+                    <Calendar size={13} className="text-gray-400" />
+                    <span>{getRelativeTimeString(project.date)}</span>
                   </div>
                 )}
 
-                <div className="mt-auto pt-6 border-t-2 border-gray-100">
+                <div className="mt-auto pt-4">
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((t, i) => (
                       <span key={i} className="text-[10px] uppercase font-bold px-2 py-1 bg-[#0F0F0F] text-white">
@@ -120,16 +141,26 @@ const Projects: React.FC = () => {
                   </div>
 
                   <div className="flex flex-col gap-3">
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full flex items-center justify-center gap-2 py-3 bg-[#E11C23] text-white font-black hover:bg-[#0F0F0F] transition-colors text-sm uppercase border-2 border-[#0F0F0F]"
+                    {project.isPrivate ? (
+                      <div
+                        className="w-full flex items-center justify-center gap-2 py-3 bg-gray-200 text-gray-500 font-black text-sm uppercase border-2 border-gray-400 cursor-not-allowed select-none"
+                        title="Este proyecto es privado / confidencial"
                       >
-                        Ver Proyecto
-                        <ExternalLink size={16} />
-                      </a>
+                        <Lock size={16} />
+                        <span>Proyecto Privado</span>
+                      </div>
+                    ) : (
+                      project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full flex items-center justify-center gap-2 py-3 bg-[#E11C23] text-white font-black hover:bg-[#0F0F0F] transition-colors text-sm uppercase border-2 border-[#0F0F0F]"
+                        >
+                          Ver Proyecto
+                          <ExternalLink size={16} />
+                        </a>
+                      )
                     )}
 
                     {project.images && project.images.length > 0 && (
@@ -166,7 +197,11 @@ const Projects: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Baraja / Stack Aesthetic */}
-              <div className="relative w-full aspect-square md:aspect-video mb-8 md:mb-12 group">
+              <div className={`relative w-full mb-8 md:mb-12 group ${
+                selectedProject.id === 'hotel-mobile-app' 
+                  ? 'max-w-md h-[72vh] aspect-[9/16]' 
+                  : 'aspect-square md:aspect-video'
+              }`}>
                 {/* Decorative Stacked Cards - Subtler on mobile */}
                 <div className="absolute inset-0 bg-white border-2 md:border-4 border-[#0F0F0F] translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 shadow-[6px_6px_0px_0px_#E11C23] md:shadow-[12px_12px_0px_0px_#E11C23]"></div>
                 <div className="absolute inset-0 bg-[#F2F2F2] border-2 md:border-4 border-[#0F0F0F] translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2"></div>
@@ -183,7 +218,7 @@ const Projects: React.FC = () => {
                   <img
                     src={selectedProject.images[currentImageIndex]}
                     alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                    className={`w-full h-full object-contain p-2 md:p-4 select-none transition-opacity duration-300 ${isImageLoading ? 'opacity-0' : 'opacity-100'}`}
+                    className={`w-full h-full object-contain p-1.5 md:p-3 select-none transition-opacity duration-300 ${isImageLoading ? 'opacity-0' : 'opacity-100'}`}
                     onLoad={() => setIsImageLoading(false)}
                   />
 

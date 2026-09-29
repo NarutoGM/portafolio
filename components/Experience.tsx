@@ -1,4 +1,5 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
 import { EXPERIENCE_DATA } from '@/utils/constants';
 
 const Experience: React.FC = () => {
@@ -10,7 +11,7 @@ const Experience: React.FC = () => {
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
         {/* HEADER */}
         <div className="mb-20 flex flex-col items-start gap-2">
-          <span className="text-[#E11C23] font-bold tracking-widest uppercase text-sm border-l-4 border-[#E11C23] pl-3 animate-pulse">
+          <span className="text-[#E11C23] font-bold tracking-widest uppercase text-sm border-l-4 border-[#E11C23] pl-3">
             Trayectoria
           </span>
           <h2 className="text-5xl md:text-7xl font-['Anton'] text-white uppercase tracking-wide">
@@ -58,7 +59,20 @@ const Experience: React.FC = () => {
                       )}
                       <div>
                         <h3 className="text-2xl md:text-3xl font-['Anton'] tracking-wide text-white group-hover:text-[#E11C23] transition-colors">{job.role} - {job.mode} </h3>
-                        <h4 className="text-lg text-gray-400 font-['Poppins'] font-medium">{job.company}</h4>
+                        <div className="flex items-center gap-2">
+                          <h4 className="text-lg text-gray-400 font-['Poppins'] font-medium">{job.company}</h4>
+                          {job.link && (
+                            <a
+                              href={job.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs text-[#E11C23] hover:underline flex items-center gap-1 font-semibold"
+                            >
+                              <span>Visitar</span>
+                              <ExternalLink size={12} />
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
 

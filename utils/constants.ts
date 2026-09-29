@@ -16,7 +16,7 @@ export const EXPERIENCE_DATA: Experience[] = [
     mode: "freelancer",
     logo: "/img/dalambo.jpg", // Placeholder generated logo
     description: "Creación y optimización de plataformas web dinámicas para una organización en México, implementando arquitecturas Full Stack con Next.js.",
-    tech: ["Next.js", "Nest.js", "Easypanel"]
+    tech: ["Next.js", "Nest.js", "VPS"]
   },
   {
     company: "Molokaih",
@@ -25,8 +25,8 @@ export const EXPERIENCE_DATA: Experience[] = [
     type: "Remote",
     mode: "parttime",
     logo: "/img/molokaih.webp", // Placeholder generated logo
-    description: "Desarrollo Full Stack para una empresa Canadiense, enfocado en la creación de interfaces web dinámicas con Next.js y la implementación de automatizaciones complejas mediante n8n. Integro soluciones como ManyChat para conectar chatbots con diversas redes sociales, trabajando de manera colaborativa en entornos productivos con despliegues continuos.",
-    tech: ["Next.js", "Nest.js", "n8n", "Easypanel", "ManyChat"]
+    description: "Desarrollo Full Stack para una empresa canadiense, donde lanzamos una plataforma web llamda huuply.",
+    tech: ["Next.js", "Nest.js", "n8n", "VPS", "ManyChat"]
   },
   {
     company: "Rangel",
@@ -37,16 +37,56 @@ export const EXPERIENCE_DATA: Experience[] = [
 
     logo: "/img/rangel.jpg", // Placeholder generated logo
     description: "Lideré el desarrollo de aplicaciones web utilizando Next.js y ShadCN UI para interfaces avanzadas. Gestioné el backend con Strapi y optimicé flujos operativos mediante automatizaciones en n8n, asegurando un control de versiones riguroso con Git y despliegues eficientes.",
-    tech: ["Next.js", "Strapi", "n8n", "Easypanel"]
+    tech: ["Next.js", "Strapi", "n8n", "VPS"]
   }
 ];
 
 export const PROJECTS_DATA: Project[] = [
   {
+    id: "hotel-mobile-app",
+    title: "App Móvil de Reservas Hoteleras",
+    description: "Maqueta y prototipo de aplicación móvil para reservas de habitaciones, catálogo con calificaciones y reseñas, autenticación, validación de pagos, y tablero de reservas activas.",
+    tech: ["React Native", "Android Studio", "TypeScript", "Tailwind"],
+    image: "/img/projects/hotel-app/2.png",
+    images: [
+      "/img/projects/hotel-app/1.png",
+      "/img/projects/hotel-app/2.png",
+      "/img/projects/hotel-app/3.png",
+      "/img/projects/hotel-app/4.png",
+      "/img/projects/hotel-app/5.png",
+      "/img/projects/hotel-app/6.png",
+      "/img/projects/hotel-app/7.png",
+      "/img/projects/hotel-app/8.png",
+      "/img/projects/hotel-app/9.png"
+    ],
+    isFreelance: false,
+    hasLogin: true,
+    isPrivate: true,
+    date: "2026-08-15"
+  },
+  {
+    id: "siga-ventas",
+    title: "Sistema de Ventas & SUNAT",
+    description: "Plataforma web de ventas y facturación electrónica con integración a SUNAT para gestión de comprobantes, inventario y control de clientes.",
+    tech: ["Next.js", "Nest.js", "PostgreSQL"],
+    image: "/img/projects/siga/1.png",
+    images: [
+      "/img/projects/siga/1.png",
+      "/img/projects/siga/2.png",
+      "/img/projects/siga/3.png",
+      "/img/projects/siga/4.png"
+    ],
+    isFreelance: true,
+    hasLogin: true,
+    inDevelopment: true,
+    isPrivate: true,
+    date: "2026-07-29"
+  },
+  {
     id: "veracruz-hotel",
     title: "Proyecto Veracruz",
     description: "Sistema de reservas integral para hotel, diseñado para optimizar la gestión de huéspedes y disponibilidad en tiempo real.",
-    tech: ["Next.js", "Nest.js", "Postgresql", "Easypanel"],
+    tech: ["Next.js", "Nest.js", "PostgreSQL", "VPS"],
     link: "https://proyecto-veracruz.vercel.app/",
     image: "/img/projects/pelicanos/1.png",
     images: [
@@ -55,32 +95,32 @@ export const PROJECTS_DATA: Project[] = [
       "/img/projects/pelicanos/3.png",
       "/img/projects/pelicanos/4.png",
       "/img/projects/pelicanos/5.png"
-
     ],
     isFreelance: true,
-    hasLogin: true
+    hasLogin: true,
+    date: "2026-05-29"
   },
   {
     id: "painting-landing",
     title: "Servicios de Pintura",
     description: "Landing page comercial moderna para servicios de pintura. Incluye un panel administrativo completo para gestionar contenido.",
-    tech: ["Next.js", "Postgresql"],
+    tech: ["Next.js", "PostgreSQL"],
     link: "https://landing-base-rosy.vercel.app/",
-    image: "/img/projects/image.png",
+    image: "/img/projects/pintura/1.png",
     images: [
-      "/img/projects/image.png",
-
-
+      "/img/projects/pintura/1.png",
+      "/img/projects/pintura/2.png"
     ],
     isFreelance: true,
-    hasLogin: true
+    hasLogin: true,
+    date: "2026-02-28"
   },
-
 ];
 
 // Mapped for SimpleIcons CDN
 export const SKILLS_WITH_ICONS = [
   { name: "React", icon: "https://cdn.simpleicons.org/react/1F2A44" },
+  { name: "React Native", icon: "https://cdn.simpleicons.org/react/1F2A44" },
   { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/1F2A44" },
   { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/1F2A44" },
   { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/1F2A44" },
@@ -91,6 +131,7 @@ export const SKILLS_WITH_ICONS = [
   { name: "Docker", icon: "https://cdn.simpleicons.org/docker/1F2A44" },
   { name: "Git", icon: "https://cdn.simpleicons.org/git/1F2A44" },
   { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/1F2A44" },
+  { name: "Android Studio", icon: "https://cdn.simpleicons.org/androidstudio/1F2A44" },
   { name: "Figma", icon: "https://cdn.simpleicons.org/figma/1F2A44" },
 ];
 

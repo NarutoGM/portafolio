@@ -1,48 +1,11 @@
 import React from 'react';
-import { ArrowRight, Github, Linkedin, Mail, Sparkles, FileText } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { PROFILE_IMAGE_URL, WHATSAPP_NUMBER } from '@/utils/constants';
 
 
 const Hero: React.FC = () => {
   return (
     <section id="inicio" className="relative min-h-[80vh] flex items-center justify-center pt-28 pb-12 overflow-hidden bg-[#0F0F0F]">
-
-
-
-
-
-      {/* ==================== PRIMER CARRUSEL (Izquierda) ==================== */}
-      {/* Enfocado en tus ROLES principales (Estático y B&N) */}
-      <div className="absolute top-24 left-0 right-0 transform -rotate-2 z-0 opacity-10 pointer-events-none">
-        <div className="flex overflow-hidden w-full">
-
-          {/* TIRA 1 (Sin animación) */}
-          <div className="flex gap-8 text-7xl md:text-9xl font-['Anton'] uppercase text-gray-500 whitespace-nowrap min-w-full shrink-0 px-4">
-            <span>Colaboración</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
-            <span>Colaboración</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
-          </div>
-
-          {/* TIRA 2 (Opcional: se mantiene para llenar pantallas anchas, pero estático) */}
-          <div aria-hidden="true" className="flex gap-8 text-7xl md:text-9xl font-['Anton'] uppercase text-gray-500 whitespace-nowrap min-w-full shrink-0 px-4">
-            <span>Colaboración</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
-            <span>Colaboración</span> • <span>Resolución de Problemas</span> • <span>Creatividad</span> • <span>Detallista</span> •
-          </div>
-
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
@@ -101,10 +64,9 @@ const Hero: React.FC = () => {
               </h2>
 
               <p className="text-gray-300 font-normal text-lg md:text-xl max-w-xl leading-relaxed">
-                Soy una persona ambiciosa con experiencia en <span className="text-[#E11C23] font-bold">desarrollo web</span>.
-                Me adentré en la <span className="text-[#E11C23] font-bold">automatización con n8n</span>.
-                Siempre busco mejorar mis habilidades y garantizar que mis proyectos sean eficientes y de alta calidad.
+                Especializado en <span className="text-[#E11C23] font-bold">desarrollo web full stack</span>, creación de <span className="text-[#E11C23] font-bold">apps móviles</span> y diseño de <span className="text-[#E11C23] font-bold">arquitecturas eficientes</span> para automatizar y escalar soluciones digitales.
               </p>
+
 
               {/* Call to Action Area */}
               <div className="pt-8 flex flex-col md:flex-row items-start md:items-center gap-6 relative">
