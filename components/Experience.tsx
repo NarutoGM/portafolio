@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import { EXPERIENCE_DATA } from '@/utils/constants';
 
@@ -50,10 +51,12 @@ const Experience: React.FC = () => {
                       {/* Logo con efecto grayscale que se activa a color al hover */}
                       {job.logo && (
                         <div className="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0 bg-white border-2 border-black rounded-lg overflow-hidden">
-                          <img
+                          <Image
                             src={job.logo}
                             alt={`${job.company} logo`}
-                            className="w-full h-full object-contain p-1"
+                            fill
+                            sizes="(max-width: 768px) 48px, 64px"
+                            className="object-contain p-1"
                           />
                         </div>
                       )}

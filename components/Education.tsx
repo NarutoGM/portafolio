@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { GraduationCap, Languages, Terminal, Wrench, Workflow, Server, Send } from 'lucide-react';
 import {
     IconBrandNextjs,
@@ -55,9 +56,11 @@ const Education: React.FC = () => {
                                             <span className="text-xs font-black bg-[#0F0F0F] px-2 py-0.5 rounded text-white mt-2 inline-block">2021 - Presente</span>
                                         </div>
                                         <div className="flex-shrink-0 flex items-center justify-center">
-                                            <img
+                                            <Image
                                                 src="/img/unt.webp"
                                                 alt="Universidad Nacional de Trujillo"
+                                                width={64}
+                                                height={64}
                                                 className="h-16 w-16 object-contain"
                                             />
                                         </div>

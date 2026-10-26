@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Calendar, ChevronLeft, ChevronRight, ExternalLink, Images, Lock, Star, X } from 'lucide-react';
 import { PROJECTS_DATA } from '@/utils/constants';
 
@@ -42,8 +43,10 @@ const Projects: React.FC = () => {
     if (!selectedProject?.images) return;
 
     const preloadImage = (index: number) => {
-      const img = new Image();
-      img.src = selectedProject.images![index];
+      if (typeof window !== 'undefined') {
+        const img = new window.Image();
+        img.src = selectedProject.images![index];
+      }
     };
 
     // Preload next and previous
@@ -89,10 +92,12 @@ const Projects: React.FC = () => {
 
               {/* Image Area */}
               <div className="relative h-64 overflow-hidden border-b-4 border-[#0F0F0F] cursor-pointer bg-[#EAEAEA] flex items-center justify-center" onClick={() => project.images && (setSelectedProject(project), setCurrentImageIndex(0), setIsImageLoading(true))}>
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className={`transition-transform duration-500 group-hover:scale-105 ${
                     project.id === 'hotel-mobile-app' 
                       ? 'object-contain py-2' 
                       : 'object-cover'
@@ -215,10 +220,12 @@ const Projects: React.FC = () => {
                     </div>
                   )}
 
-                  <img
+                  <Image
                     src={selectedProject.images[currentImageIndex]}
                     alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                    className={`w-full h-full object-contain p-1.5 md:p-3 select-none transition-opacity duration-300 ${isImageLoading ? 'opacity-0' : 'opacity-100'}`}
+                    fill
+                    sizes="(max-width: 896px) 100vw, 896px"
+                    className={`object-contain p-1.5 md:p-3 select-none transition-opacity duration-300 ${isImageLoading ? 'opacity-0' : 'opacity-100'}`}
                     onLoad={() => setIsImageLoading(false)}
                   />
 

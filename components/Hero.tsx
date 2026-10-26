@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { ArrowRight, Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { PROFILE_IMAGE_URL, WHATSAPP_NUMBER } from '@/utils/constants';
 
@@ -23,10 +24,13 @@ const Hero: React.FC = () => {
 
                 {/* Image Wrapper with Duotone Effect */}
                 <div className="w-full h-full relative overflow-hidden]">
-                  <img
+                  <Image
                     src={PROFILE_IMAGE_URL}
                     alt="Fernando Pantoja"
-                    className="w-full h-full object-cover  mix-blend-multiply  contrast-125 brightness-110"
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 288px, 384px"
+                    className="object-cover mix-blend-multiply contrast-125 brightness-110"
                   />
                   {/* Texture Overlay */}
                   <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
