@@ -27,8 +27,31 @@ const gochi = Gochi_Hand({
 });
 
 export const metadata: Metadata = {
-  title: "Fernando Pantoja | Desarrollador Web",
-  description: "Portafolio profesional",
+  metadataBase: new URL("https://portafolio-olive-two-16.vercel.app"),
+  title: "Fernando Pantoja | Software Developer",
+  description: "Portafolio profesional de Fernando Pantoja. Software Developer especializado en desarrollo full stack, apps móviles y arquitecturas escalables.",
+  openGraph: {
+    title: "Fernando Pantoja | Software Developer",
+    description: "Software Developer especializado en desarrollo full stack, apps móviles y arquitecturas eficientes.",
+    url: "https://portafolio-olive-two-16.vercel.app",
+    siteName: "Fernando Pantoja Portfolio",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Fernando Pantoja - Software Developer",
+      },
+    ],
+    locale: "es_PE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fernando Pantoja | Software Developer",
+    description: "Software Developer especializado en desarrollo full stack, apps móviles y arquitecturas eficientes.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
